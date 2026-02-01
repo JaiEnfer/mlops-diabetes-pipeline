@@ -2,13 +2,22 @@ schema: '2.0'
 stages:
   train:
     cmd: python src/train.py
+    deps:
+    - path: .\data\processed\diabetes_processed.csv
+      hash: md5
+      md5: 91db2d3d28bcebd9e6fb4f5955d42252
+      size: 88901
+    - path: .\src\train.py
+      hash: md5
+      md5: 4821e60149e656312351358d38867be5
+      size: 2275
     params:
       params.yaml:
         RIDGE_ALPHA: 1.0
     outs:
     - path: mlruns
       hash: md5
-      md5: 0e7d2ce8b278107661bc66e4b58d9b7b.dir
+      md5: 06393f4b9374c43380f779bf5df31bce.dir
       size: 2858
       nfiles: 6
     - path: models
