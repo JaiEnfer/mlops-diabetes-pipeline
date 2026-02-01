@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Data / Models (we'll version data via DVC later)
+data/raw/
+data/processed/
+models/
+
+# MLflow
+mlruns/
+
+# OS
+.DS_Store
