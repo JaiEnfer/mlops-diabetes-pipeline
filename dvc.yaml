@@ -6,3 +6,14 @@ stages:
     outs:
     - mlruns
     - models
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - .\data\raw\diabetes.csv
+    - .\src\prepare.py
+    outs:
+    - .\data\processed\diabetes_processed.csv
+  make_dataset:
+    cmd: python src/make_dataset.py
+    deps:
+    - .\src\make_dataset.py

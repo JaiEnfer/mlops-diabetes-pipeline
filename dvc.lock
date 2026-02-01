@@ -8,11 +8,34 @@ stages:
     outs:
     - path: mlruns
       hash: md5
-      md5: 52280799f65d583098c0df5dd2d3d26c.dir
-      size: 1921
-      nfiles: 5
+      md5: 0e7d2ce8b278107661bc66e4b58d9b7b.dir
+      size: 2858
+      nfiles: 6
     - path: models
       hash: md5
-      md5: d751713988987e9331980363e24189ce.dir
-      size: 0
-      nfiles: 0
+      md5: 3c2db911187ec7dbac16b191a932355c.dir
+      size: 937
+      nfiles: 1
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: .\data\raw\diabetes.csv
+      hash: md5
+      md5: bf3703e9cb8cab6bdb417738fb83c13a
+      size: 95580
+    - path: .\src\prepare.py
+      hash: md5
+      md5: 34532509a017e79bec525d682644c15d
+      size: 591
+    outs:
+    - path: .\data\processed\diabetes_processed.csv
+      hash: md5
+      md5: 91db2d3d28bcebd9e6fb4f5955d42252
+      size: 88901
+  make_dataset:
+    cmd: python src/make_dataset.py
+    deps:
+    - path: .\src\make_dataset.py
+      hash: md5
+      md5: a496eccfe3345b53f44d6995cd6fb7a0
+      size: 482
