@@ -7,8 +7,8 @@ stages:
     - mlruns
     - models
     deps:
-    - .\data\processed\diabetes_processed.csv
-    - .\src\train.py
+    - data/processed/diabetes_processed.csv
+    - src/train.py
   prepare:
     cmd: python src/prepare.py
     deps:
