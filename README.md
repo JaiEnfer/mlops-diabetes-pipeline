@@ -103,6 +103,7 @@ uvicorn api.app:app --reload
 Open Swagger UI:
 
 [👉] {http://127.0.0.1:8000/docs}
+
 ---
 
 🔮 Example Prediction Request
@@ -153,7 +154,9 @@ Every push triggers:
 
 ✔️ API tests
 
+
 via GitHub Actions.
+
 ---
 
 🎯 Skills Demonstrated
