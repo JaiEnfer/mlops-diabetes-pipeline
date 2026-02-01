@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import yaml
 import os
 from pathlib import Path
 
@@ -10,6 +11,12 @@ from sklearn.datasets import load_diabetes
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
+
+def load_params(path: str = "params.yaml") -> dict:
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
 
 def main() -> None:
     Path("models").mkdir(parents=True, exist_ok=True)
@@ -24,7 +31,8 @@ def main() -> None:
     )
 
     #hyperparameter
-    alpha =float(os.environ.get("RIDGE_ALPHA", "1.0"))
+    params = load_params()
+    alpha = float(params["RIDGE_ALPHA"])
 
     #MLflow setup (local folder ./mlruns)
     mlflow.set_experiment("diabetes-ridge")

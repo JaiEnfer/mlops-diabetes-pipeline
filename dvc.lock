@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    params:
+      params.yaml:
+        RIDGE_ALPHA: 1.0
+    outs:
+    - path: mlruns
+      hash: md5
+      md5: 52280799f65d583098c0df5dd2d3d26c.dir
+      size: 1921
+      nfiles: 5
+    - path: models
+      hash: md5
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
